@@ -1,49 +1,22 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>천안 관광 가이드</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
-        body { font-family: 'Noto Sans KR', sans-serif; }
-    </style>
-</head>
-<body class="bg-slate-50 overflow-hidden">
-    <div class="flex flex-col h-screen">
-        <header class="bg-white border-b px-6 py-4 flex justify-between items-center shadow-sm z-10">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg">📍</div>
-                <h1 class="text-xl font-black text-slate-800">천안 투어 가이드</h1>
-            </div>
-            <div class="text-xs font-bold text-emerald-500 bg-emerald-50 px-3 py-1 rounded-full text-center">READY</div>
-        </header>
-
-        <main class="flex-1 flex flex-col md:flex-row overflow-hidden">
-            <aside class="md:w-80 w-full bg-white border-r flex flex-col overflow-hidden">
-                <div class="p-4 border-b bg-slate-50">
-                    <p class="text-sm font-bold text-slate-500">천안 가볼만한 곳</p>
-                </div>
-                <div class="flex-1 overflow-y-auto p-4 space-y-4">
-                    <div class="p-4 border rounded-xl hover:bg-indigo-50 shadow-sm transition-all">
-                        <h3 class="font-bold text-slate-800 text-lg">독립기념관</h3>
-                        <p class="text-sm text-slate-500 mt-1">민족의 성역, 역사 학습의 장</p>
-                    </div>
-                    <div class="p-4 border rounded-xl hover:bg-indigo-50 shadow-sm transition-all">
-                        <h3 class="font-bold text-slate-800 text-lg">각원사</h3>
-                        <p class="text-sm text-slate-500 mt-1">동양 최대의 청동좌불상</p>
-                    </div>
-                </div>
-            </aside>
-
-            <section class="flex-1 relative">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102604.42854089006!2d127.065548!3d36.815129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ad76676f4e243%3A0xc6b678c2e8e3d2f2!2z7Lap7LKt64Ko64mEIOyyneyViOyLnA!5e0!3m2!1sko!2skr!4v1707542100000!5m2!1sko!2skr" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </section>
-        </main>
+<aside class="md:w-80 w-full bg-white border-r flex flex-col overflow-hidden">
+    <div class="p-4 border-b bg-indigo-50">
+        <p class="text-sm font-bold text-indigo-600">추천 1일 투어 코스</p>
     </div>
-</body>
-</html>
+    <div class="flex-1 overflow-y-auto p-4 space-y-4">
+        <div class="p-4 border-l-4 border-indigo-500 bg-slate-50 rounded-r-xl shadow-sm">
+            <span class="text-xs font-bold text-indigo-500 uppercase">AM 10:00</span>
+            <h3 class="font-bold text-slate-800 text-lg">독립기념관</h3>
+            <p class="text-sm text-slate-500 mt-1">천안의 상징, 역사 여행의 시작</p>
+        </div>
+        <div class="p-4 border-l-4 border-emerald-500 bg-slate-50 rounded-r-xl shadow-sm">
+            <span class="text-xs font-bold text-emerald-500 uppercase">PM 12:30</span>
+            <h3 class="font-bold text-slate-800 text-lg">병천 순대거리</h3>
+            <p class="text-sm text-slate-500 mt-1">금강산도 식후경! 병천순대 국밥</p>
+        </div>
+        <div class="p-4 border-l-4 border-orange-500 bg-slate-50 rounded-r-xl shadow-sm">
+            <span class="text-xs font-bold text-orange-500 uppercase">PM 03:00</span>
+            <h3 class="font-bold text-slate-800 text-lg">각원사</h3>
+            <p class="text-sm text-slate-500 mt-1">거대 청동좌불상과 고즈넉한 산책</p>
+        </div>
+    </div>
+</aside>

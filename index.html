@@ -8,8 +8,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
         body { font-family: 'Noto Sans KR', sans-serif; }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
         #map { width: 100%; height: 100%; min-height: 400px; background-color: #f1f5f9; }
     </style>
 </head>
@@ -17,35 +15,26 @@
     <div class="flex flex-col h-screen">
         <header class="bg-white border-b px-6 py-4 flex justify-between items-center shadow-sm z-10">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg">
-                    📍
-                </div>
+                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg">📍</div>
                 <h1 class="text-xl font-black text-slate-800">천안 투어 가이드</h1>
             </div>
             <div class="text-xs font-bold text-emerald-500 bg-emerald-50 px-3 py-1 rounded-full">LIVE</div>
         </header>
-
         <main class="flex-1 flex flex-col md:flex-row overflow-hidden">
             <aside class="md:w-96 w-full bg-white border-r flex flex-col overflow-hidden">
-                <div class="p-4 border-b">
-                    <div class="flex gap-2 overflow-x-auto pb-2" id="category-tabs">
-                        <button onclick="changeTheme('history')" class="theme-btn active px-4 py-2 rounded-full bg-slate-900 text-white text-sm font-bold shrink-0 transition-all">역사 탐방</button>
-                        <button onclick="changeTheme('bread')" class="theme-btn px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-bold shrink-0 transition-all">빵지순례</button>
-                        <button onclick="changeTheme('nature')" class="theme-btn px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-bold shrink-0 transition-all">자연 휴양</button>
-                    </div>
-                </div>
-                <div id="spot-list" class="flex-1 overflow-y-auto p-4 space-y-3 custom-scrollbar">
+                <div id="spot-list" class="flex-1 overflow-y-auto p-4 space-y-3">
                     </div>
             </aside>
-
             <section class="flex-1 relative">
-                <div id="map">
-                    <div class="flex items-center justify-center h-full text-slate-400 text-sm italic">지도를 불러오는 중...</div>
-                </div>
-                
-                <div id="detail-card" class="hidden absolute bottom-6 left-6 right-6 md:w-80 bg-white rounded-3xl shadow-2xl z-20 overflow-hidden transition-all duration-300 transform translate-y-2">
-                    <img id="detail-img" src="" class="w-full h-32 object-cover">
-                    <div class="p-5">
-                        <h3 id="detail-title" class="text-lg font-black mb-2 text-slate-800"></h3>
-                        <p id="detail-desc" class="text-xs text-slate-500 leading-relaxed mb-4"></p>
-                        <button id="detail-link" class="w-full py-3 bg-indigo-600 text-white rounded-
+                <div id="map"></div>
+            </section>
+        </main>
+    </div>
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=74e4776116262b9a78696144e1381e97"></script>
+    <script>
+        var mapContainer = document.getElementById('map'), 
+            mapOption = { center: new kakao.maps.LatLng(36.7836, 127.2231), level: 8 };
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+    </script>
+</body>
+</html>

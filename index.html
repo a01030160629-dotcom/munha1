@@ -6,68 +6,79 @@
     <title>천안 스마트 투어 가이드</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
-        body { font-family: 'Noto Sans KR', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; }
+        .active-tab { color: #4f46e5; border-bottom: 3px solid #4f46e5; background-color: #f5f3ff; }
         .hidden { display: none; }
+        .card-anim { transition: all 0.2s ease-in-out; }
+        .card-anim:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
-<body class="bg-slate-50 overflow-hidden">
+<body class="overflow-hidden">
     <div class="flex flex-col h-screen">
-        <header class="bg-white border-b px-6 py-4 flex justify-between items-center shadow-sm z-10">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg text-xl">📍</div>
-                <h1 class="text-xl font-black text-slate-800 uppercase tracking-tighter">Cheonan Smart Guide</h1>
+        <header class="bg-white/80 backdrop-blur-md border-b px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl">🇰🇷</span>
+                <h1 class="text-xl font-extrabold text-slate-900 tracking-tight">천안스마트투어</h1>
             </div>
-            <div class="text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100 italic">v1.0 SUCCESS</div>
+            <button onclick="location.reload()" class="text-slate-400 hover:text-indigo-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+            </button>
         </header>
 
         <main class="flex-1 flex flex-col md:flex-row overflow-hidden">
-            <aside class="md:w-96 w-full bg-white border-r flex flex-col overflow-hidden">
-                <div class="flex border-b text-sm font-bold text-center bg-slate-50">
-                    <button onclick="showTab('history')" id="btn-history" class="flex-1 py-4 border-b-2 border-indigo-600 text-indigo-600">역사 탐방</button>
-                    <button onclick="showTab('date')" id="btn-date" class="flex-1 py-4 border-b-2 border-transparent text-slate-400">인생샷</button>
-                    <button onclick="showTab('food')" id="btn-food" class="flex-1 py-4 border-b-2 border-transparent text-slate-400">맛집 투어</button>
+            <aside class="md:w-[400px] w-full bg-white flex flex-col border-r shadow-xl z-10">
+                <div class="flex border-b">
+                    <button onclick="showTab('history')" id="btn-history" class="active-tab flex-1 py-4 font-bold transition-all">🏛️ 역사</button>
+                    <button onclick="showTab('date')" id="btn-date" class="flex-1 py-4 font-bold text-slate-400 border-b-3 border-transparent transition-all hover:bg-slate-50">📸 데이트</button>
+                    <button onclick="showTab('food')" id="btn-food" class="flex-1 py-4 font-bold text-slate-400 border-b-3 border-transparent transition-all hover:bg-slate-50">🥐 빵지순례</button>
                 </div>
 
-                <div class="flex-1 overflow-y-auto p-5" id="course-list">
-                    <div id="history" class="course-content space-y-4">
-                        <div class="p-4 bg-indigo-50 border border-indigo-100 rounded-xl">
-                            <h3 class="font-bold text-indigo-900">1. 독립기념관</h3>
-                            <p class="text-xs text-indigo-700 mt-1 mb-3">충남 천안시 동남구 목천읍 독립기념관로 1</p>
+                <div class="flex-1 overflow-y-auto p-5 space-y-4 bg-slate-50/50">
+                    <div id="history" class="course-content space-y-4 animate-in fade-in duration-500">
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm card-anim">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="px-2 py-1 bg-indigo-100 text-indigo-700 text-[10px] font-bold rounded-md uppercase">Must Visit</span>
+                                <span class="text-slate-400 text-xs">오전 10:00</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-800 mb-1">독립기념관</h3>
+                            <p class="text-sm text-slate-500 mb-4 leading-relaxed">민족의 성역, 웅장한 겨레의 집을 배경으로 역사를 체험하세요.</p>
                             <div class="flex gap-2">
-                                <a href="https://map.kakao.com/link/to/독립기념관,36.783,127.223" target="_blank" class="flex-1 bg-white text-[11px] py-2 border rounded shadow-sm text-center font-bold text-slate-700">📍 길찾기</a>
-                                <a href="https://map.kakao.com/link/search/독립기념관 맛집" target="_blank" class="flex-1 bg-white text-[11px] py-2 border rounded shadow-sm text-center font-bold text-orange-600">🍴 근처맛집</a>
+                                <a href="https://map.kakao.com/link/to/독립기념관,36.783,127.223" target="_blank" class="flex-1 bg-indigo-600 text-white text-center py-2.5 rounded-xl text-xs font-bold shadow-md shadow-indigo-200 hover:bg-indigo-700">길찾기</a>
+                                <a href="https://map.kakao.com/link/search/독립기념관 맛집" target="_blank" class="flex-1 bg-white text-slate-700 border border-slate-200 text-center py-2.5 rounded-xl text-xs font-bold hover:bg-slate-50">주변 맛집</a>
                             </div>
                         </div>
-                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
-                            <h3 class="font-bold text-slate-800">2. 각원사</h3>
-                            <p class="text-xs text-slate-500 mt-1 mb-3">충남 천안시 동남구 각원사길 245</p>
-                            <div class="flex gap-2">
-                                <a href="https://map.kakao.com/link/to/각원사,36.832,127.199" target="_blank" class="flex-1 bg-white text-[11px] py-2 border rounded shadow-sm text-center">📍 길찾기</a>
-                            </div>
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm card-anim">
+                            <h3 class="text-lg font-bold text-slate-800 mb-1">각원사</h3>
+                            <p class="text-sm text-slate-500 mb-4">동양 최대 청동좌불상의 웅장함을 느껴보세요.</p>
+                            <a href="https://map.kakao.com/link/to/각원사,36.832,127.199" target="_blank" class="block w-full bg-slate-100 text-slate-700 text-center py-2.5 rounded-xl text-xs font-bold hover:bg-slate-200">카카오맵 길안내</a>
                         </div>
                     </div>
 
                     <div id="date" class="course-content hidden space-y-4">
-                        <div class="p-4 bg-rose-50 border border-rose-100 rounded-xl">
-                            <h3 class="font-bold text-rose-900">1. 천안삼거리공원</h3>
-                            <p class="text-xs text-rose-700 mt-1 mb-3">충남 천안시 동남구 충절로 410</p>
-                            <a href="https://map.kakao.com/link/to/천안삼거리공원,36.789,127.168" target="_blank" class="block w-full bg-white text-[11px] py-2 border rounded text-center font-bold">📍 길찾기</a>
+                        <div class="bg-white p-5 rounded-2xl border border-rose-100 shadow-sm card-anim">
+                            <span class="px-2 py-1 bg-rose-100 text-rose-700 text-[10px] font-bold rounded-md uppercase mb-2 inline-block">Photo Spot</span>
+                            <h3 class="text-lg font-bold text-slate-800 mb-1">천안삼거리공원</h3>
+                            <p class="text-sm text-slate-500 mb-4 leading-relaxed">능수버들 아래에서 여유로운 산책과 인생샷을 남겨보세요.</p>
+                            <a href="https://map.kakao.com/link/to/천안삼거리공원,36.789,127.168" target="_blank" class="block w-full bg-rose-500 text-white text-center py-2.5 rounded-xl text-xs font-bold shadow-md shadow-rose-200">길찾기</a>
                         </div>
                     </div>
 
                     <div id="food" class="course-content hidden space-y-4">
-                        <div class="p-4 bg-orange-50 border border-orange-100 rounded-xl">
-                            <h3 class="font-bold text-orange-900">1. 병천 아우내장터</h3>
-                            <p class="text-xs text-orange-700 mt-1 mb-3">충남 천안시 동남구 병천면 아우내순대길 40</p>
-                            <a href="https://map.kakao.com/link/search/병천 순대거리 맛집" target="_blank" class="block w-full bg-white text-[11px] py-2 border rounded text-center font-bold text-orange-600">🍴 순대거리 맛집보기</a>
+                        <div class="bg-white p-5 rounded-2xl border border-amber-100 shadow-sm card-anim">
+                            <span class="px-2 py-1 bg-amber-100 text-amber-700 text-[10px] font-bold rounded-md uppercase mb-2 inline-block">Best Food</span>
+                            <h3 class="text-lg font-bold text-slate-800 mb-1">뚜쥬루 빵돌가마마을</h3>
+                            <p class="text-sm text-slate-500 mb-4 leading-relaxed">천안에만 있는 빵의 성지! 거북이빵은 필수입니다.</p>
+                            <a href="https://map.kakao.com/link/search/천안 뚜쥬루" target="_blank" class="block w-full bg-amber-500 text-white text-center py-2.5 rounded-xl text-xs font-bold shadow-md shadow-amber-200">지점 확인하기</a>
                         </div>
                     </div>
                 </div>
             </aside>
 
-            <section class="flex-1 relative">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102640.8353392471!2d127.0674251!3d36.8122709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ad6d252445851%3A0x6d90d7c71d37483!2z7Lap7LKt64Ko64mEIOyynOyViOyLnA!5e0!3m2!1sko!2skr!4v1700000000000" 
+            <section class="flex-1 relative bg-slate-200">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m127.15!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b2ad88006e885%3A0xc3f0b240e83b38c!2z7Lap7LKt64Ko64mEIOyLKeyViOyLnA!5e0!3m2!1sko!2skr!4v1700000000000!5m2!1sko!2skr0" 
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </section>
         </main>
@@ -75,20 +86,18 @@
 
     <script>
         function showTab(tabId) {
-            // 모든 코스 숨기기
             document.querySelectorAll('.course-content').forEach(el => el.classList.add('hidden'));
-            // 모든 버튼 색깔 빼기
             document.querySelectorAll('aside button').forEach(btn => {
-                btn.classList.remove('text-indigo-600', 'border-indigo-600');
-                btn.classList.add('text-slate-400', 'border-transparent');
+                btn.classList.remove('active-tab', 'text-indigo-600');
+                btn.classList.add('text-slate-400');
             });
 
-            // 선택한 탭만 보이기
-            document.getElementById(tabId).classList.remove('hidden');
-            // 선택한 버튼 강조
-            const activeBtn = document.getElementById('btn-' + tabId);
-            activeBtn.classList.add('text-indigo-600', 'border-indigo-600');
-            activeBtn.classList.remove('text-slate-400', 'border-transparent');
+            const target = document.getElementById(tabId);
+            target.classList.remove('hidden');
+            
+            const btn = document.getElementById('btn-' + tabId);
+            btn.classList.add('active-tab');
+            btn.classList.remove('text-slate-400');
         }
     </script>
 </body>

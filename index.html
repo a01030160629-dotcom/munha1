@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>천안 투어 마스터</title>
+    <title>천안 스마트 투어 가이드</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700;900&display=swap');
@@ -16,8 +16,8 @@
 <body class="bg-slate-50 overflow-hidden">
     <div class="flex flex-col h-screen">
         <header class="bg-white border-b px-6 py-4 flex justify-between items-center z-10 shadow-sm">
-            <h1 class="text-xl font-black text-slate-900 flex items-center gap-2">🗺️ 천안 투어 가이드</h1>
-            <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full border border-indigo-100 italic">LOCATION UP!</span>
+            <h1 class="text-xl font-black text-slate-900 flex items-center gap-2">📍 천안 스마트 투어</h1>
+            <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full border border-indigo-100 italic">V2.0 UPDATED</span>
         </header>
 
         <main class="flex-1 flex flex-col md:flex-row overflow-hidden">
@@ -29,11 +29,10 @@
                 </div>
 
                 <div class="flex-1 overflow-y-auto p-5 space-y-4 bg-slate-50/30">
-                    
                     <div id="history" class="tab-content space-y-4">
                         <div class="card">
                             <h3 class="font-bold text-slate-800">독립기념관</h3>
-                            <p class="text-xs text-slate-500 mt-1">우리 민족의 뜨거운 역사가 살아있는 곳</p>
+                            <p class="text-xs text-slate-500 mt-1">민족의 성역, 천안 대표 명소</p>
                             <a href="https://map.kakao.com/link/to/독립기념관,36.783,127.223" target="_blank" class="inline-block mt-2 text-[11px] font-bold text-indigo-600">길찾기 →</a>
                         </div>
                         <div class="card">
@@ -52,67 +51,57 @@
                             <a href="https://map.kakao.com/link/to/성거산성지,36.883,127.221" target="_blank" class="inline-block mt-2 text-[11px] font-bold text-indigo-600">길찾기 →</a>
                         </div>
                     </div>
-
                     <div id="date" class="tab-content hidden space-y-4">
                         <div class="card">
                             <h3 class="font-bold text-rose-600">천안삼거리공원</h3>
-                            <p class="text-xs text-slate-500 mt-1">능수버들 휘늘어진 천안의 랜드마크</p>
-                            <a href="https://map.kakao.com/link/to/천안삼거리공원,36.789,127.168" target="_blank" class="inline-block mt-2 text-[11px] font-bold text-rose-500">길찾기 →</a>
+                            <a href="https://map.kakao.com/link/to/천안삼거리공원,36.789,127.168" target="_blank" class="text-[11px] font-bold text-rose-500">길찾기 →</a>
                         </div>
                         <div class="card">
                             <h3 class="font-bold text-rose-600">천호지(단대호수)</h3>
-                            <p class="text-xs text-slate-500 mt-1">노래 '꽃송이가'의 배경, 최고의 야경 코스</p>
-                            <a href="https://map.kakao.com/link/to/천호지,36.836,127.172" target="_blank" class="inline-block mt-2 text-[11px] font-bold text-rose-500">길찾기 →</a>
+                            <a href="https://map.kakao.com/link/to/천호지,36.836,127.172" target="_blank" class="text-[11px] font-bold text-rose-500">길찾기 →</a>
                         </div>
                         <div class="card">
                             <h3 class="font-bold text-rose-600">태조산 공원</h3>
-                            <p class="text-xs text-slate-500 mt-1">숲속 산책로와 전망대가 아름다운 곳</p>
-                            <a href="https://map.kakao.com/link/to/태조산공원,36.818,127.195" target="_blank" class="inline-block mt-2 text-[11px] font-bold text-rose-500">길찾기 →</a>
+                            <a href="https://map.kakao.com/link/to/태조산공원,36.818,127.195" target="_blank" class="text-[11px] font-bold text-rose-500">길찾기 →</a>
                         </div>
                         <div class="card">
                             <h3 class="font-bold text-rose-600">아라리오 갤러리</h3>
-                            <p class="text-xs text-slate-500 mt-1">도심 속에서 즐기는 세계적인 현대 미술</p>
-                            <a href="https://map.kakao.com/link/to/아라리오갤러리,36.820,127.155" target="_blank" class="inline-block mt-2 text-[11px] font-bold text-rose-500">길찾기 →</a>
+                            <a href="https://map.kakao.com/link/to/아라리오갤러리,36.820,127.155" target="_blank" class="text-[11px] font-bold text-rose-500">길찾기 →</a>
                         </div>
                     </div>
-
                     <div id="food" class="tab-content hidden space-y-4">
                         <div class="card">
                             <h3 class="font-bold text-amber-600">병천 순대거리</h3>
-                            <p class="text-xs text-slate-500 mt-1">전국 1등 맛집들이 모인 순대국밥 성지</p>
-                            <a href="https://map.kakao.com/link/search/병천순대맛집" target="_blank" class="inline-block mt-2 text-[11px] font-bold text-amber-500">맛집보기 →</a>
+                            <a href="https://map.kakao.com/link/search/병천순대맛집" target="_blank" class="text-[11px] font-bold text-amber-500">맛집보기 →</a>
                         </div>
                         <div class="card">
                             <h3 class="font-bold text-amber-600">뚜쥬루 빵돌가마마을</h3>
-                            <p class="text-xs text-slate-500 mt-1">빵을 위해 만들어진 동화 같은 마을</p>
-                            <a href="https://map.kakao.com/link/to/뚜쥬루빵돌가마마을,36.786,127.126" target="_blank" class="inline-block mt-2 text-[11px] font-bold text-amber-500">길찾기 →</a>
+                            <a href="https://map.kakao.com/link/to/뚜쥬루빵돌가마마을,36.786,127.126" target="_blank" class="text-[11px] font-bold text-amber-500">길찾기 →</a>
                         </div>
                         <div class="card">
                             <h3 class="font-bold text-amber-600">학화호도과자 본점</h3>
-                            <p class="text-xs text-slate-500 mt-1">100년 가까운 전통의 진짜 호도과자</p>
-                            <a href="https://map.kakao.com/link/search/학화호도과자" target="_blank" class="inline-block mt-2 text-[11px] font-bold text-amber-500">매장찾기 →</a>
+                            <a href="https://map.kakao.com/link/search/학화호도과자" target="_blank" class="text-[11px] font-bold text-amber-500">매장찾기 →</a>
                         </div>
                         <div class="card">
-                            <h3 class="font-bold text-amber-600">중앙시장 (호떡/칼국수)</h3>
-                            <p class="text-xs text-slate-500 mt-1">시장의 정이 느껴지는 가성비 먹거리 천국</p>
-                            <a href="https://map.kakao.com/link/search/천안중앙시장 맛집" target="_blank" class="inline-block mt-2 text-[11px] font-bold text-amber-500">먹거리 찾기 →</a>
+                            <h3 class="font-bold text-amber-600">중앙시장</h3>
+                            <a href="https://map.kakao.com/link/search/천안중앙시장 맛집" target="_blank" class="text-[11px] font-bold text-amber-500">먹거리 찾기 →</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="p-5 border-t bg-indigo-50/50">
-                    <p class="text-[11px] font-bold text-indigo-400 mb-3 uppercase tracking-wider">Nearby Facilities</p>
-                    <div class="grid grid-cols-4 gap-2">
-                        <a href="https://map.kakao.com/link/search/편의점" target="_blank" class="flex flex-col items-center p-2 bg-white rounded-lg border text-[10px] font-bold">🏪<span>편의점</span></a>
-                        <a href="https://map.kakao.com/link/search/카페" target="_blank" class="flex flex-col items-center p-2 bg-white rounded-lg border text-[10px] font-bold">☕<span>카페</span></a>
-                        <a href="https://map.kakao.com/link/search/숙소" target="_blank" class="flex flex-col items-center p-2 bg-white rounded-lg border text-[10px] font-bold">🛌<span>숙소</span></a>
-                        <a href="https://map.kakao.com/link/search/약국" target="_blank" class="flex flex-col items-center p-2 bg-white rounded-lg border text-[10px] font-bold">🏥<span>약국</span></a>
+                <div class="p-5 border-t bg-slate-50">
+                    <p class="text-xs font-bold text-slate-500 mb-3">🏠 내 주변 편의시설 찾기</p>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="https://map.kakao.com/link/search/편의점" target="_blank" class="p-2 bg-white border rounded-lg text-center text-[11px] font-bold shadow-sm">🏪 편의점</a>
+                        <a href="https://map.kakao.com/link/search/카페" target="_blank" class="p-2 bg-white border rounded-lg text-center text-[11px] font-bold shadow-sm">☕ 카페</a>
+                        <a href="https://map.kakao.com/link/search/숙소" target="_blank" class="p-2 bg-white border rounded-lg text-center text-[11px] font-bold shadow-sm">🛌 숙소</a>
+                        <a href="https://map.kakao.com/link/search/약국" target="_blank" class="p-2 bg-white border rounded-lg text-center text-[11px] font-bold shadow-sm">🏥 병원/약국</a>
                     </div>
                 </div>
             </aside>
 
-            <section class="flex-1 relative bg-slate-200">
-                <iframe src="https://maps.google.com/?cid=5999512280022104962&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <section class="flex-1 relative">
+                <iframe src="https://m.map.kakao.com" width="100%" height="100%" style="border:0;"></iframe>
             </section>
         </main>
     </div>
@@ -125,9 +114,8 @@
                 b.classList.add('text-slate-400');
             });
             document.getElementById(id).classList.remove('hidden');
-            const activeBtn = document.getElementById('t-' + id);
-            activeBtn.classList.add('tab-active');
-            activeBtn.classList.remove('text-slate-400');
+            document.getElementById('t-' + id).classList.add('tab-active');
+            document.getElementById('t-' + id).classList.remove('text-slate-400');
         }
     </script>
 </body>

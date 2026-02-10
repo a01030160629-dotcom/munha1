@@ -10,100 +10,52 @@
         body { font-family: 'Pretendard', sans-serif; }
         .tab-active { color: #4f46e5; border-bottom: 3px solid #4f46e5; background-color: #f5f3ff; }
         .hidden { display: none; }
-        .card { transition: all 0.2s; border-left: 4px solid transparent; }
-        .card:hover { transform: translateX(4px); border-left-color: #4f46e5; }
+        .facility-btn { @apply flex-1 py-2 text-[11px] font-bold rounded-lg border transition-all text-center; }
     </style>
 </head>
 <body class="bg-slate-50 overflow-hidden">
     <div class="flex flex-col h-screen">
         <header class="bg-white border-b px-6 py-4 flex justify-between items-center z-10 shadow-sm">
-            <h1 class="text-xl font-black text-slate-900 flex items-center gap-2">
-                <span class="text-2xl">🗺️</span> 천안 투어 마스터
-            </h1>
-            <div class="flex gap-2">
-                <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full border border-emerald-100">10개 장소 수록</span>
-            </div>
+            <h1 class="text-xl font-black text-slate-900 flex items-center gap-2">📍 천안 스마트 투어</h1>
         </header>
 
         <main class="flex-1 flex flex-col md:flex-row overflow-hidden">
             <aside class="md:w-[450px] w-full bg-white border-r flex flex-col shadow-xl z-10">
-                <div class="flex border-b text-[13px] font-bold bg-white sticky top-0 overflow-x-auto">
-                    <button onclick="changeTab('history')" id="t-history" class="tab-active min-w-[80px] flex-1 py-4">🏛️ 역사</button>
-                    <button onclick="changeTab('date')" id="t-date" class="flex-1 min-w-[80px] py-4 text-slate-400">📸 인생샷</button>
-                    <button onclick="changeTab('heal')" id="t-heal" class="flex-1 min-w-[80px] py-4 text-slate-400">🌿 힐링</button>
-                    <button onclick="changeTab('food')" id="t-food" class="flex-1 min-w-[80px] py-4 text-slate-400">🍞 맛집</button>
+                <div class="flex border-b text-[13px] font-bold bg-white sticky top-0">
+                    <button onclick="changeTab('history')" id="t-history" class="tab-active flex-1 py-4">🏛️ 역사</button>
+                    <button onclick="changeTab('date')" id="t-date" class="flex-1 py-4 text-slate-400">📸 인생샷</button>
+                    <button onclick="changeTab('food')" id="t-food" class="flex-1 py-4 text-slate-400">🍞 맛집</button>
                 </div>
 
                 <div class="flex-1 overflow-y-auto p-5 space-y-4 bg-slate-50/30">
-                    
                     <div id="history" class="tab-content space-y-4">
-                        <div class="card p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
+                        <div class="p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
                             <h3 class="font-bold text-slate-800">독립기념관</h3>
-                            <p class="text-xs text-slate-500 mb-3">겨레의 집과 7개의 전시관이 있는 역사의 장</p>
+                            <p class="text-xs text-slate-500 mb-3">민족의 성역, 천안 대표 명소</p>
                             <a href="https://map.kakao.com/link/to/독립기념관,36.783,127.223" target="_blank" class="text-[11px] font-bold text-indigo-600">길찾기 →</a>
                         </div>
-                        <div class="card p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
-                            <h3 class="font-bold text-slate-800">유관순열사 사적지</h3>
-                            <p class="text-xs text-slate-500 mb-3">유관순 열사의 생가와 기념관이 있는 곳</p>
-                            <a href="https://map.kakao.com/link/to/유관순열회사적지,36.808,127.303" target="_blank" class="text-[11px] font-bold text-indigo-600">길찾기 →</a>
                         </div>
-                        <div class="card p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
-                            <h3 class="font-bold text-slate-800">천안 홍대용과학관</h3>
-                            <p class="text-xs text-slate-500 mb-3">조선시대 과학자 홍대용을 기리는 과학 박물관</p>
-                            <a href="https://map.kakao.com/link/to/홍대용과학관,36.756,127.245" target="_blank" class="text-[11px] font-bold text-indigo-600">길찾기 →</a>
-                        </div>
-                    </div>
-
                     <div id="date" class="tab-content hidden space-y-4">
-                        <div class="card p-4 bg-white border border-rose-100 rounded-xl shadow-sm">
+                        <div class="p-4 bg-white border border-rose-100 rounded-xl shadow-sm">
                             <h3 class="font-bold text-rose-600">천안삼거리공원</h3>
-                            <p class="text-xs text-slate-500 mb-3">능수버들 버드나무 아래가 최고의 포토존</p>
                             <a href="https://map.kakao.com/link/to/천안삼거리공원,36.789,127.168" target="_blank" class="text-[11px] font-bold text-rose-500">길찾기 →</a>
                         </div>
-                        <div class="card p-4 bg-white border border-rose-100 rounded-xl shadow-sm">
-                            <h3 class="font-bold text-rose-600">단대호수 (천호지)</h3>
-                            <p class="text-xs text-slate-500 mb-3">'꽃송이가' 노래의 배경! 야경 산책로 추천</p>
-                            <a href="https://map.kakao.com/link/to/천호지,36.836,127.172" target="_blank" class="text-[11px] font-bold text-rose-500">길찾기 →</a>
-                        </div>
                     </div>
+                </div>
 
-                    <div id="heal" class="tab-content hidden space-y-4">
-                        <div class="card p-4 bg-white border border-emerald-100 rounded-xl shadow-sm">
-                            <h3 class="font-bold text-emerald-700">태조산 리조트 산책로</h3>
-                            <p class="text-xs text-slate-500 mb-3">가벼운 등산과 함께 즐기는 피톤치드 샤워</p>
-                            <a href="https://map.kakao.com/link/to/태조산공원,36.818,127.195" target="_blank" class="text-[11px] font-bold text-emerald-600">길찾기 →</a>
-                        </div>
-                        <div class="card p-4 bg-white border border-emerald-100 rounded-xl shadow-sm">
-                            <h3 class="font-bold text-emerald-700">각원사 청동좌불상</h3>
-                            <p class="text-xs text-slate-500 mb-3">마음이 편안해지는 고즈넉한 대사찰</p>
-                            <a href="https://map.kakao.com/link/to/각원사,36.832,127.199" target="_blank" class="text-[11px] font-bold text-emerald-600">길찾기 →</a>
-                        </div>
+                <div class="p-5 border-t bg-slate-50">
+                    <p class="text-xs font-bold text-slate-500 mb-3">🏠 내 주변 편의시설 찾기</p>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="https://map.kakao.com/link/search/근처 편의점" target="_blank" class="facility-btn bg-white border-slate-200 text-slate-700 hover:bg-indigo-50 hover:border-indigo-200">🏪 편의점</a>
+                        <a href="https://map.kakao.com/link/search/근처 카페" target="_blank" class="facility-btn bg-white border-slate-200 text-slate-700 hover:bg-indigo-50 hover:border-indigo-200">☕ 카페</a>
+                        <a href="https://map.kakao.com/link/search/근처 숙소" target="_blank" class="facility-btn bg-white border-slate-200 text-slate-700 hover:bg-indigo-50 hover:border-indigo-200">🛌 숙박/호텔</a>
+                        <a href="https://map.kakao.com/link/search/근처 병원" target="_blank" class="facility-btn bg-white border-slate-200 text-slate-700 hover:bg-indigo-50 hover:border-indigo-200">🏥 병원/약국</a>
                     </div>
-
-                    <div id="food" class="tab-content hidden space-y-4">
-                        <div class="card p-4 bg-white border border-amber-100 rounded-xl shadow-sm">
-                            <h3 class="font-bold text-amber-600">병천 아우내 순대거리</h3>
-                            <p class="text-xs text-slate-500 mb-3">전국에서 찾아오는 순대국밥의 성지</p>
-                            <a href="https://map.kakao.com/link/search/병천순대맛집" target="_blank" class="text-[11px] font-bold text-amber-500">맛집보기 →</a>
-                        </div>
-                        <div class="card p-4 bg-white border border-amber-100 rounded-xl shadow-sm">
-                            <h3 class="font-bold text-amber-600">뚜쥬루 빵돌가마마을</h3>
-                            <p class="text-xs text-slate-500 mb-3">동화 속 마을 같은 비주얼의 거대 빵집</p>
-                            <a href="https://map.kakao.com/link/to/뚜쥬루빵돌가마마을,36.786,127.126" target="_blank" class="text-[11px] font-bold text-amber-500">길찾기 →</a>
-                        </div>
-                        <div class="card p-4 bg-white border border-amber-100 rounded-xl shadow-sm">
-                            <h3 class="font-bold text-amber-600">학화호도과자</h3>
-                            <p class="text-xs text-slate-500 mb-3">1934년부터 이어온 천안 호도과자의 전설</p>
-                            <a href="https://map.kakao.com/link/search/학화호도과자" target="_blank" class="text-[11px] font-bold text-amber-500">매장찾기 →</a>
-                        </div>
-                    </div>
-
                 </div>
             </aside>
 
             <section class="flex-1 relative bg-slate-200">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102555.2046465492!2d127.0911765!3d36.815129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ad76643916e6d%3A0xc3f982823158c547!2z7Lap7LKt64Ko64mEIOyyneyViOyLnA!5e0!3m2!1sko!2skr!4v1710000000000!5m2!1sko!2skr4" 
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://maps.google.com/?cid=14303497456289934815&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </section>
         </main>
     </div>
@@ -115,7 +67,6 @@
                 b.classList.remove('tab-active', 'text-indigo-600');
                 b.classList.add('text-slate-400');
             });
-            
             document.getElementById(id).classList.remove('hidden');
             const activeBtn = document.getElementById('t-' + id);
             activeBtn.classList.add('tab-active');

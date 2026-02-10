@@ -1,22 +1,43 @@
-<aside class="md:w-80 w-full bg-white border-r flex flex-col overflow-hidden">
-    <div class="p-4 border-b bg-indigo-50">
-        <p class="text-sm font-bold text-indigo-600">추천 1일 투어 코스</p>
+<aside class="md:w-96 w-full bg-white border-r flex flex-col overflow-hidden">
+    <div class="flex border-b text-sm font-bold text-center">
+        <button onclick="showCourse('history')" class="flex-1 py-3 bg-indigo-50 text-indigo-700 border-b-2 border-indigo-700">역사 탐방</button>
+        <button onclick="showCourse('date')" class="flex-1 py-3 text-slate-500 hover:bg-slate-50">인생샷 데이트</button>
+        <button onclick="showCourse('bread')" class="flex-1 py-3 text-slate-500 hover:bg-slate-50">빵지순례</button>
     </div>
-    <div class="flex-1 overflow-y-auto p-4 space-y-4">
-        <div class="p-4 border-l-4 border-indigo-500 bg-slate-50 rounded-r-xl shadow-sm">
-            <span class="text-xs font-bold text-indigo-500 uppercase">AM 10:00</span>
-            <h3 class="font-bold text-slate-800 text-lg">독립기념관</h3>
-            <p class="text-sm text-slate-500 mt-1">천안의 상징, 역사 여행의 시작</p>
+
+    <div id="course-container" class="flex-1 overflow-y-auto p-5 space-y-6">
+        <div class="course-item history">
+            <div class="flex items-center justify-between">
+                <h3 class="font-bold text-slate-800 text-lg">1. 독립기념관</h3>
+                <span class="text-[10px] bg-indigo-100 text-indigo-600 px-2 py-1 rounded">필수코스</span>
+            </div>
+            <p class="text-sm text-slate-500 mt-1 mb-3">대한민국 독립의 역사를 한눈에!</p>
+            <div class="flex gap-2">
+                <a href="https://map.kakao.com/link/to/독립기념관,36.783,127.223" target="_blank" class="text-xs bg-slate-100 hover:bg-slate-200 p-2 rounded flex-1 text-center">📍 길찾기</a>
+                <a href="https://map.kakao.com/link/search/독립기념관 맛집" target="_blank" class="text-xs bg-orange-50 hover:bg-orange-100 text-orange-600 p-2 rounded flex-1 text-center">🍴 근처 맛집</a>
+            </div>
         </div>
-        <div class="p-4 border-l-4 border-emerald-500 bg-slate-50 rounded-r-xl shadow-sm">
-            <span class="text-xs font-bold text-emerald-500 uppercase">PM 12:30</span>
-            <h3 class="font-bold text-slate-800 text-lg">병천 순대거리</h3>
-            <p class="text-sm text-slate-500 mt-1">금강산도 식후경! 병천순대 국밥</p>
+
+        <div class="course-item history mt-6 pt-6 border-t border-dashed">
+            <h3 class="font-bold text-slate-800 text-lg">2. 병천 아우내장터</h3>
+            <p class="text-sm text-slate-500 mt-1 mb-3">독립운동의 현장에서 맛보는 순대국밥</p>
+            <div class="flex gap-2">
+                <a href="https://map.kakao.com/link/to/병천아우내장터,36.802,127.299" target="_blank" class="text-xs bg-slate-100 hover:bg-slate-200 p-2 rounded flex-1 text-center">📍 길찾기</a>
+                <a href="https://map.kakao.com/link/search/병천 순대 맛집" target="_blank" class="text-xs bg-orange-50 hover:bg-orange-100 text-orange-600 p-2 rounded flex-1 text-center">🍴 근처 맛집</a>
+            </div>
         </div>
-        <div class="p-4 border-l-4 border-orange-500 bg-slate-50 rounded-r-xl shadow-sm">
-            <span class="text-xs font-bold text-orange-500 uppercase">PM 03:00</span>
-            <h3 class="font-bold text-slate-800 text-lg">각원사</h3>
-            <p class="text-sm text-slate-500 mt-1">거대 청동좌불상과 고즈넉한 산책</p>
+        
         </div>
+
+    <div class="p-4 bg-slate-50 text-slate-400 text-center text-xs">
+        각 장소를 클릭하면 카카오맵으로 연결됩니다.
     </div>
 </aside>
+
+<script>
+// 간단한 탭 전환 함수 (참고용)
+function showCourse(theme) {
+    // 실제 구현시에는 이 부분에 각 테마별 데이터를 교체하는 로직을 넣습니다.
+    alert(theme + " 코스로 전환합니다! (데이터 준비 중)");
+}
+</script>
